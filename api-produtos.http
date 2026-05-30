@@ -1,0 +1,64 @@
+### Login ADMIN
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@loja.com",
+  "senha": "admin123"
+}
+
+### Login USER
+POST http://localhost:8080/auth/login
+Content-Type: application/jsongit --version
+
+{
+  "email": "user@loja.com",
+  "senha": "user123"
+}
+
+### Cadastrar usuário
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "nome": "Joao Silva",
+  "email": "joao@email.com",
+  "senha": "minhaSenha123",
+  "role": "USER"
+}
+
+### Listar produtos
+GET http://localhost:8080/produtos
+Authorization: Bearer COLE_SEU_TOKEN_AQUI
+
+### Buscar produto por ID
+GET http://localhost:8080/produtos/1
+Authorization: Bearer COLE_SEU_TOKEN_AQUI
+
+### Cadastrar produto com estoque baixo
+POST http://localhost:8080/produtos
+Authorization: Bearer COLE_SEU_TOKEN_ADMIN_AQUI
+Content-Type: application/json
+
+{
+  "nome": "Caneta Azul",
+  "descricao": "Caneta esferografica azul",
+  "preco": 1.99,
+  "estoque": 3
+}
+
+### Atualizar produto
+PUT http://localhost:8080/produtos/1
+Authorization: Bearer COLE_SEU_TOKEN_ADMIN_AQUI
+Content-Type: application/json
+
+{
+  "nome": "Caneta Azul Premium",
+  "descricao": "Caneta esferografica azul premium",
+  "preco": 2.50,
+  "estoque": 1
+}
+
+### Remover produto
+DELETE http://localhost:8080/produtos/1
+Authorization: Bearer COLE_SEU_TOKEN_ADMIN_AQUI
